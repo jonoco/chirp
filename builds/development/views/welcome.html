@@ -1,0 +1,37 @@
+<style>
+	body {
+		background-image: url('http://i.imgur.com/ksZjvyn.jpg');
+		background-repeat: no-repeat;
+		background-position: center top;
+	}
+</style>
+
+<section>
+	<div class="jumbotron">
+		<h1>chirp</h1>
+		<div class="quote">
+			<small>/tʃɜːp/</small><br />
+			<small>to speak in a lively fashion</small>
+		</div>
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary btn-sm" ng-click="showMake()">Make a chat room</button>
+			<button type="button" class="btn btn-default btn-sm" ng-click="showJoin()">Join a chat room</button>
+		</div>
+		<form name="myForm" class="welcome-form" novalidate>
+			<div class="input-group" ng-show="makeInput">
+	      <input type="text" name="makeRoom" class="form-control" placeholder="Make room..."
+	      	ng-model="room.name">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" ng-click="makeRoom()">Make!</button>
+	      </span>
+    	</div><!-- make room -->
+    	<div class="input-group" ng-show="joinInput">
+	      <input type="text" name="joinRoom" class="form-control" placeholder="Join room..."
+	      	ng-model="room.name">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button" ng-click="joinRoom()">Join!</button>
+	      </span>
+    	</div><!-- join room -->
+		</form>
+	</div><!-- jumbotron -->
+</section>

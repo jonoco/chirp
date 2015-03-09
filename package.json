@@ -1,0 +1,15 @@
+{
+  "name": "Chirp",
+  "version": "0.0.1",
+  "description": "An application for chatting",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonoco/chirp.git"
+  },
+  "author": "Joshua Cox",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-util": "^2.2.20",
+    "gulp-webserver": "^0.8.1"
+  }
+}
