@@ -10,28 +10,41 @@
 	<div class="jumbotron">
 		<h1>chirp</h1>
 		<div class="quote">
-			<small>/tʃɜːp/</small><br />
-			<small>to speak in a lively fashion</small>
-		</div>
+			<span>/tʃɜːp/ </span>
+			<blockquote>to speak in a lively fashion</blockquote>
+		</div><!-- quote -->
 		<div class="btn-group">
-			<button type="button" class="btn btn-primary btn-sm" ng-click="showMake()">Make a chat room</button>
-			<button type="button" class="btn btn-default btn-sm" ng-click="showJoin()">Join a chat room</button>
-		</div>
+			<button type="button" class="btn btn-primary btn-sm" ng-click="inputToggle=false">Make a chat room</button>
+			<button type="button" class="btn btn-default btn-sm" ng-click="inputToggle=true">Join a chat room</button>
+		</div><!-- btn-group -->
 		<form name="myForm" class="welcome-form" novalidate>
-			<div class="input-group" ng-show="makeInput">
-	      <input type="text" name="makeRoom" class="form-control" placeholder="Make room..."
-	      	ng-model="room.name">
-	      <span class="input-group-btn">
-	        <button class="btn btn-default" type="button" ng-click="makeRoom()">Make!</button>
-	      </span>
-    	</div><!-- make room -->
-    	<div class="input-group" ng-show="joinInput">
-	      <input type="text" name="joinRoom" class="form-control" placeholder="Join room..."
-	      	ng-model="room.name">
-	      <span class="input-group-btn">
-	        <button class="btn btn-default" type="button" ng-click="joinRoom()">Join!</button>
-	      </span>
-    	</div><!-- join room -->
+			<div class="input-group" ng-hide="inputToggle">
+			    <input type="text" name="makeRoom" class="form-control" placeholder="Make room..."
+			      ng-model="room.name" 
+			      ng-minlength="2" 
+			      ng-maxlength="30" 
+			      ng-pattern="/^[\S]*$/">
+			    <span class="input-group-btn">
+			      <button class="btn btn-default" type="button" 
+			        ng-click="makeRoom()" 
+			        ng-disabled="myForm.$invalid">Make!</button>
+		     	</span>
+    		</div><!-- make room -->
+    		<span class="error" ng-show="myForm.makeRoom.$error.pattern">
+    			no spaces in your room name please</span>
+
+	    	<div class="input-group" ng-show="inputToggle">
+		      <input type="text" name="joinRoom" class="form-control" placeholder="Join room..."
+		      	ng-model="room.name"
+		      	ng-minlength="2" 
+		      	ng-maxlength="30" 
+		      	ng-pattern="/^[\S]*$/">
+		      <span class="input-group-btn">
+		        <button class="btn btn-default" type="button" 
+		        	ng-click="joinRoom()" 
+		        	ng-disabled="myForm.$invalid">Join!</button>
+		      </span>
+	    	</div><!-- join room -->
 		</form>
 	</div><!-- jumbotron -->
 </section>

@@ -1,8 +1,17 @@
 <section>
 <div class="container">
-	<h1>Room name...</h1>
-	<div class="logs">
-	</div><!-- logs -->
-	<input name="log" type="text" ng-model="log.text">
+	<div class="room">
+		<h1>{{room.name}}</h1>
+		<div class="chat-window" ng-repeat="(key, log) in logs">
+		</div><!-- chat-window -->
+		<div class="input-group">
+			<input type="text" name="text" class="form-control" placeholder="message"
+				ng-model="log.text">
+			<span class="input-group-btn">
+		    <button class="btn btn-primary" type="button" 
+		      ng-click="">send</button>
+			</span>
+		</div>
+	</div><!-- room -->
 </div><!-- container -->
 </section>

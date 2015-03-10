@@ -1,32 +1,35 @@
 myApp.controller('WelcomeController', 
-	function($scope, $firebase, $location, $log, FIREBASE_URL) {
+	function($scope, $location, $firebaseArray, FIREBASE_URL) {
 
-	var ref = new Firebase(FIREBASE_URL + '/rooms');
-	var roomInfo = $firebase(ref);
+	$scope.makeRoom = function() { 
+    var roomName = $scope.room.name;
+    var roomRef = new Firebase(FIREBASE_URL + '/rooms/' + roomName);
+    var roomAry = $firebaseArray(roomRef);    
 
-  $scope.makeInput = false;
-  $scope.joinInput = false;
-
-	$scope.makeRoom = function() {
-    roomInfo.$push({
-      name: $scope.room.name,
+    roomAry.$add({
+      name: roomName,
       date: Firebase.ServerValue.TIMESTAMP
-    }).then(function(data) {
-      console.log(data);
+    })
+    .then(function(roomRef){
+      console.log('success');
+      $location.path('/room/' + roomName);
     });
-  } // addroom
+/*
+    roomRef.set({
+      name: roomName,
+      date: Firebase.ServerValue.TIMESTAMP
+    }, function(error) {
+      if(error) {
+        //error
+        console.log(error);
+      } else {
+        $location.path('/room/' + roomName);
+      }
+    });
+*/
+  } // add room
 
   $scope.joinRoom = function() {
     // join room
-  }
-
-  $scope.showJoin = function() {
-    $scope.makeInput = false;
-    $scope.joinInput = !$scope.joinInput;
-  }
-  
-  $scope.showMake = function() {
-    $scope.joinInput = false;
-    $scope.makeInput = !$scope.makeInput;
   }
 });

@@ -106,12 +106,30 @@ input {
   margin-bottom: 10px;
 }
 
-.quote small {
+.quote {
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
   color: #888888;
 }
 
 .welcome-form {
   margin: 0 auto;
   width: 50%;
+}
+
+/* Room page */
+
+.room {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #eee;
+  border-radius: 6px;
+  box-shadow: 3px 3px 9px #000;
+}
+
+.chat-window {
+  min-height: 100px;
 }
 
