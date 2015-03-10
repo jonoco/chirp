@@ -14,19 +14,6 @@ myApp.controller('WelcomeController',
       console.log('success');
       $location.path('/room/' + roomName);
     });
-/*
-    roomRef.set({
-      name: roomName,
-      date: Firebase.ServerValue.TIMESTAMP
-    }, function(error) {
-      if(error) {
-        //error
-        console.log(error);
-      } else {
-        $location.path('/room/' + roomName);
-      }
-    });
-*/
   } // add room
 
   $scope.joinRoom = function() {

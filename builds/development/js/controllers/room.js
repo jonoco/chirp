@@ -16,6 +16,9 @@ myApp.controller('RoomController',
       text: $scope.log.text,
       date: Firebase.ServerValue.TIMESTAMP
     }).then(function() {
+      var chat = $('.chat-window');
+      chat.scrollTop(chat[0].scrollHeight);      
+
       $scope.log.text = '';
     });
   } // addlog

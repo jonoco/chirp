@@ -1,17 +1,23 @@
 <section>
 <div class="container">
 	<div class="room">
-		<h1>{{room.name}}</h1>
-		<div class="chat-window" ng-repeat="(key, log) in logs">
+		<h1 class="chat-header">{{room.name}}</h1>
+		<div class="chat-window" id="screen">
+			<div class="message" ng-repeat="(key, log) in logs | limitTo: 50">
+				<p>{{log.text}} 
+					<span class="pull-right">{{log.date | date}}</span>
+				</p>
+			</div><!-- message -->
 		</div><!-- chat-window -->
-		<div class="input-group">
-			<input type="text" name="text" class="form-control" placeholder="message"
-				ng-model="log.text">
-			<span class="input-group-btn">
-		    <button class="btn btn-primary" type="button" 
-		      ng-click="">send</button>
-			</span>
-		</div>
+		<form name="myForm" ng-submit="addLog()" novalidate>
+			<div class="input-group">
+				<input type="text" name="text" class="message-bar form-control" placeholder="message"
+					ng-model="log.text">
+				<span class="input-group-btn">
+			    <button class="btn btn-primary" type="button">send</button>
+				</span>
+			</div>
+		</form>
 	</div><!-- room -->
 </div><!-- container -->
 </section>
