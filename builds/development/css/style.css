@@ -80,6 +80,10 @@ input {
 
 /* Navbar */
 
+.navbar-nav {
+  font-size: 1.4rem;
+}
+
 /*
  * Page styles
  */
@@ -144,10 +148,12 @@ input {
 }
 
 .message-body {
+  font-size: 1.4rem;
   margin-left: 10px;
 }
 
 .message-user {
+  font-size: 1.2rem;
   color: #aaaaaa;
 }
 

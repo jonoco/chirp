@@ -8,7 +8,9 @@
 			<div class="input-group name-input col-sm-6">
 				<span>username</span>
 				<input type="text" name="user" class="form-control" placeholder="username"
-					ng-model="user.name" ng-required="true">
+					ng-model="user.name" 
+					ng-required="true"
+					ng-maxlength="25">
 				<span class="input-group-btn">
 			    <button class="btn btn-default" type="button" ng-click="changeName()" ng-show="">change</button>
 				</span>
@@ -24,12 +26,16 @@
 				<p class="message-body">{{log.text}}</p>
 			</div><!-- message -->
 		</div><!-- chat-window -->
-		<form name="myForm" ng-submit="addLog()" novalidate>
+		<form name="myForm" ng-submit="addLog()" 
+			novalidate>
 			<div class="input-group">
 				<input type="text" name="text" class="message-bar form-control" placeholder="message"
-					ng-model="log.text">
+					ng-model="log.text" ng-disabled="!user.name">
 				<span class="input-group-btn">
-			    <button class="btn btn-primary" type="button" ng-disabled="!user.name">send</button>
+			    <button class="btn btn-primary" type="button" 
+			    	ng-disabled="!user.name"
+			    	ng-click="addLog()">
+			    	send</button>
 				</span>
 			</div>
 		</form>
