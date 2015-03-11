@@ -2,7 +2,7 @@
 	body {
 		background-image: url('http://i.imgur.com/ksZjvyn.jpg');
 		background-repeat: no-repeat;
-		background-position: center top;
+		background-position: center 50px;
 	}
 </style>
 
@@ -19,23 +19,23 @@
 		</div><!-- btn-group -->
 		<form name="myForm" class="welcome-form" novalidate>
 			<div class="input-group" ng-hide="inputToggle">
-			    <input type="text" name="makeRoom" class="form-control" placeholder="Make room..."
-			      ng-model="room.name" 
-			      ng-minlength="2" 
-			      ng-maxlength="30" 
-			      ng-pattern="/^[\S]*$/">
-			    <span class="input-group-btn">
-			      <button class="btn btn-default" type="button" 
-			        ng-click="makeRoom()" 
-			        ng-disabled="myForm.$invalid">Make!</button>
-		     	</span>
-    		</div><!-- make room -->
+		    <input type="text" name="makeRoom" class="form-control" placeholder="Make room..."
+		      ng-model="room.make" 
+		      ng-minlength="2" 
+		      ng-maxlength="30" 
+		      ng-pattern="/^[\S]*$/">
+		    <span class="input-group-btn">
+		      <button class="btn btn-default" type="button" 
+		        ng-click="makeRoom()" 
+		        ng-disabled="myForm.$invalid">Make!</button>
+	     	</span>
+    	</div><!-- make room -->
     		<span class="error" ng-show="myForm.makeRoom.$error.pattern">
     			no spaces in your room name please</span>
 
 	    	<div class="input-group" ng-show="inputToggle">
 		      <input type="text" name="joinRoom" class="form-control" placeholder="Join room..."
-		      	ng-model="room.name"
+		      	ng-model="room.join"
 		      	ng-minlength="2" 
 		      	ng-maxlength="30" 
 		      	ng-pattern="/^[\S]*$/">
@@ -46,5 +46,6 @@
 		      </span>
 	    	</div><!-- join room -->
 		</form>
+		<span ng-show="message">{{message}}</span>
 	</div><!-- jumbotron -->
 </section>

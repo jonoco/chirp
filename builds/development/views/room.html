@@ -1,12 +1,27 @@
 <section>
 <div class="container">
 	<div class="room">
-		<h1 class="chat-header">{{room.name}}</h1>
+		<div class="chat-header row">
+			<div class="col-sm-6">
+				<h1>{{room.name}}</h1>
+			</div>
+			<div class="input-group name-input col-sm-6">
+				<span>username</span>
+				<input type="text" name="user" class="form-control" placeholder="username"
+					ng-model="user.name" ng-required="true">
+				<span class="input-group-btn">
+			    <button class="btn btn-default" type="button" ng-click="changeName()" ng-show="">change</button>
+				</span>
+			</div><!-- input-group -->
+		</div><!-- chat-header -->
+		
 		<div class="chat-window" id="screen">
-			<div class="message" ng-repeat="(key, log) in logs | limitTo: 50">
-				<p>{{log.text}} 
-					<span class="pull-right">{{log.date | date}}</span>
+			<div class="message" ng-repeat="(key, log) in logs | orderBy:'-date' | limitTo: 50">
+				<p>
+					<span class="message-user">{{log.user}}<span>
+					<span class="message-date pull-right">{{log.date | date:'shortTime'}}</span>
 				</p>
+				<p class="message-body">{{log.text}}</p>
 			</div><!-- message -->
 		</div><!-- chat-window -->
 		<form name="myForm" ng-submit="addLog()" novalidate>
@@ -14,7 +29,7 @@
 				<input type="text" name="text" class="message-bar form-control" placeholder="message"
 					ng-model="log.text">
 				<span class="input-group-btn">
-			    <button class="btn btn-primary" type="button">send</button>
+			    <button class="btn btn-primary" type="button" ng-disabled="!user.name">send</button>
 				</span>
 			</div>
 		</form>
