@@ -3,7 +3,7 @@ myApp.controller('RoomController',
   
   $scope.room = {};
   $scope.user = {};
-  $scope.room.name = $routeParams.room;
+  $scope.room.name = $routeParams.room.replace(/-/g, ' ');
   $scope.user.name = 'Guest' + Math.floor(Math.random() * 10000);
 
 	var ref = new Firebase(FIREBASE_URL + '/rooms/' + $scope.room.name + '/logs');

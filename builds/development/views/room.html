@@ -30,11 +30,11 @@
 			novalidate>
 			<div class="input-group">
 				<input type="text" name="text" class="message-bar form-control" placeholder="message"
-					ng-model="log.text" ng-disabled="!user.name">
+					ng-model="log.text" 
+					ng-disabled="!user.name" autofocus>
 				<span class="input-group-btn">
-			    <button class="btn btn-primary" type="button" 
-			    	ng-disabled="!user.name"
-			    	ng-click="addLog()">
+			    <button class="btn btn-primary" type="submit" 
+			    	ng-disabled="!user.name">
 			    	send</button>
 				</span>
 			</div>

@@ -1,30 +1,55 @@
 myApp.controller('WelcomeController', 
-	function($scope, $location, $firebaseArray, FIREBASE_URL) {
+	function($scope, $location, FIREBASE_URL) {
 
   var ref = new Firebase(FIREBASE_URL + '/rooms');
+  $scope.join = false;
+
+  $scope.toggle = function() {
+    $scope.name = '';
+    $scope.message = '';
+    $scope.join = !$scope.join;
+  }
 
 	$scope.makeRoom = function() { 
-    var roomName = $scope.room.make;    
-    var roomRef = new Firebase(FIREBASE_URL + '/rooms/' + roomName);
-    var roomAry = $firebaseArray(roomRef);    
-
-    roomAry.$add({
-      name: roomName,
-      date: Firebase.ServerValue.TIMESTAMP
-    })
-    .then(function(roomRef){
-      $location.path('/room/' + roomName);
-    });
+    var roomName = replaceSpace($scope.name);  
+    
+    ref.child(roomName).once('value', function(snapshot) {
+      var exists = snapshot.exists();
+    
+      if (exists) {
+        $scope.message = 'sorry, a room already exists with that name';
+        $scope.$apply();
+      } else {
+        ref.child(roomName).set({
+          name: roomName,
+          date: Firebase.ServerValue.TIMESTAMP
+        }, function() {
+          $scope.$apply($location.path('/room/' + roomName));
+        }); 
+  
+      }//if
+    });//.once
   } // add room
 
   $scope.joinRoom = function() {
-    ref.child($scope.room.join).once('value', function(snapshot) {
-      var exists = (snapshot.val() !== null);
+    var roomName = replaceSpace($scope.name);
+
+    ref.child(roomName).once('value', function(snapshot) {
+      var exists = snapshot.exists();
+
       if (exists) {
-        $scope.$apply($location.path('/room/' + $scope.room.join));
+        $scope.$apply($location.path('/room/' + roomName));
       } else {
-        $scope.$apply($scope.message = 'sorry, no room found with that name');
-      }
-    });
+        $scope.message = 'sorry, no room found with that name';
+        $scope.$apply();
+      }// if
+    });//.once
   } // join room
+
+  function replaceSpace(string) {
+    return string.replace(/ /g, '-'); 
+  }
+  
 });
+
+
