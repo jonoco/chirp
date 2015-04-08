@@ -17,16 +17,17 @@
   <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
 
   <script src="js/app.js"></script>
-  <script src="js/controllers/room.js"></script>
-  <script src="js/controllers/welcome.js"></script>
+  
 </head>
 <body>
-    <header>
-      <nav class="navbar navbar-default navbar-fixed-top"
-        ng-include="'views/nav.html'"></nav>
-    </header>
-    <div class="page">
-      <main ng-view></main>
-    </div>
+  <header>
+    <nav class="navbar navbar-default navbar-fixed-top"
+      ng-include="'views/nav.html'"></nav>
+  </header>
+  <div class="page">
+    <main ng-view></main>
+  </div>
+  <script src="js/controllers/room.js"></script>
+  <script src="js/controllers/welcome.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-/* Import fonts */
-@import url("http://fonts.googleapis.com/css?family=Bree+Serif|Merriweather:400,300,700,900|Droid+Sans:400,700");
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic);
 
 /* Reset Styles */
 
@@ -13,8 +12,8 @@ a img {
 /* Base Styles */
 
 body {
+  font-family: 'Merriweather', serif;
   margin-top: 70px;
-  font-family: Merriweather, serif;
   font-size: 1em;
 }
 
@@ -47,12 +46,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Container styles */
-
-.jumbotron {
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
 
 .user-topbox, .user-stacks, .register, .login, .stack-top, .stack-bottom {
   background-color: rgba(240, 240, 240, 0.8);
@@ -91,6 +84,8 @@ input {
 /* Welcome page */
 
 .jumbotron {
+  margin: 0 auto;
+  text-align: center;
   background-color: rgba(240,240,240,0.8);
 }
 
