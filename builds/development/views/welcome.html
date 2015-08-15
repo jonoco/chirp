@@ -15,7 +15,7 @@
 		</div><!-- quote -->
 
 		<div class="btn-group">
-			<button type="button" class="btn btn-primary btn-sm" 
+			<button type="button" class="btn btn-default btn-sm" 
 				ng-show="join" 
 				ng-click="toggle()">Make a chat room</button>
 			<button type="button" class="btn btn-default btn-sm" 
@@ -27,7 +27,7 @@
 			ng-submit="makeRoom()" 
 			ng-hide="join" novalidate>
 			<div class="input-group" >
-		    <input type="text" name="makeRoom" class="form-control" placeholder="Make room..."
+		    <input type="text" name="makeRoom" class="form-control" placeholder="Make a room..."
 		      ng-model="name" 
 		      ng-minlength="4" 
 		      ng-maxlength="30">
@@ -42,7 +42,7 @@
 				ng-submit="joinRoom()" 
 				ng-show="join" novalidate>
 	    	<div class="input-group" >
-		      <input type="text" name="joinRoom" class="form-control" placeholder="Join room..."
+		      <input type="text" name="joinRoom" class="form-control" placeholder="Join a room..."
 		      	ng-model="name"
 		      	ng-minlength="4">
 		      <span class="input-group-btn">
@@ -51,7 +51,7 @@
 		      </span>
 	    	</div><!-- input-group -->
 			</form><!-- welcome-form -->
-		<span ng-show="message">{{message}}</span>
+		<span ng-show="message" class="error-message">{{message}}</span>
 	</div><!-- jumbotron -->
 </div><!-- container -->	
 </section>

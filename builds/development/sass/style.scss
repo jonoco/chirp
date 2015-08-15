@@ -4,6 +4,7 @@
 @import 'variables';
 @import 'base';
 @import 'animations';
+@import 'media';
 
 /* Alert and Error styles */
 
@@ -54,8 +55,11 @@ input {
 
 /* Buttons */
 
-.btn:hover { 
-  background-color: #66CCFF;
+.btn {
+  transition: all 0.5s;
+  border-radius: 5px;
+  
+  :hover { background-color: $darkgray; }
 }
 
 /* Navbar */
@@ -93,8 +97,12 @@ input {
 }
 
 .welcome-form {
-  margin: 0 auto;
+  margin: 10px auto;
   width: 50%;
+}
+
+.error-message {
+  color: $red;
 }
 
 /* Room page */
@@ -112,6 +120,7 @@ input {
   border-bottom: 1px solid #999999;
   padding-bottom: 10px;
   padding-right: 10px;
+  h1 { float: left; }
 }
 
 .chat-window {
@@ -127,6 +136,7 @@ input {
 .name-input {
   width: 30%;
   margin-left: auto;
+  span { font-size: 1.2em; }
 }
 .message {
 

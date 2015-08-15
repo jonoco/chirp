@@ -6,8 +6,8 @@
 				<h1>{{room.name}}</h1>
 			</div>
 			<div class="input-group name-input col-sm-6">
-				<span>username</span>
-				<input type="text" name="user" class="form-control" placeholder="username"
+				<span for="username">username</span>
+				<input type="text" name="user" class="form-control" id="username" placeholder="username:"
 					ng-model="user.name" 
 					ng-required="true"
 					ng-maxlength="25">
@@ -17,7 +17,7 @@
 			</div><!-- input-group -->
 		</div><!-- chat-header -->
 		
-		<div class="chat-window" id="screen">
+		<div class="chat-window">
 			<div class="message" ng-repeat="(key, log) in logs | orderBy:'-date' | limitTo: 50">
 				<p>
 					<span class="message-user">{{log.user}}<span>
