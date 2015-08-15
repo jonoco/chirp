@@ -8,7 +8,10 @@ a img {
 body {
   font-family: 'Merriweather', serif;
   margin-top: 70px;
-  font-size: 1em; }
+  font-size: 1em;
+  background-image: url("http://i.imgur.com/ksZjvyn.jpg");
+  background-repeat: no-repeat;
+  background-position: center 50px; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #475b62;
@@ -98,7 +101,7 @@ input {
 .jumbotron {
   margin: 0 auto;
   text-align: center;
-  background-color: rgba(240, 240, 240, 0.8); }
+  background-color: rgba(240, 240, 240, 0.9); }
 
 .jumbotron span {
   font-size: 1.4em; }
@@ -126,6 +129,7 @@ input {
   margin: 0 auto;
   padding: 15px;
   background-color: #eee;
+  opacity: 0.9;
   border-radius: 6px;
   box-shadow: 3px 3px 9px #000; }
 
