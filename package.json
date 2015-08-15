@@ -1,10 +1,13 @@
 {
   "name": "Chirp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An application for chatting",
   "repository": {
     "type": "git",
     "url": "https://github.com/jonoco/chirp.git"
+  },
+  "scripts": {
+    "deploy": "cd builds/development ; firebase deploy"
   },
   "author": "Joshua Cox",
   "devDependencies": {
