@@ -1,0 +1,14 @@
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+    opacity: 0;
+  }
+
+  to {
+    margin-left: $message-margin;
+    opacity: 1;
+  }
+  50% {
+  	opacity: 0.5;
+  }
+}

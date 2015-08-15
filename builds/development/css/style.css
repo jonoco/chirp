@@ -1,131 +1,109 @@
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,400italic);
-
-/* Reset Styles */
-
 ol, ul {
   list-style: none; }
 
 a img {
-  border: none; 
-}
-
-/* Base Styles */
+  border: none; }
 
 body {
   font-family: 'Merriweather', serif;
   margin-top: 70px;
-  font-size: 1em;
-}
+  font-size: 1em; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #475b62;
-  text-shadow: 1px 1px rgb(255,255,255, 1);
-  margin: 0;
-}
+  text-shadow: 1px 1px white;
+  margin: 0; }
+
+@keyframes slidein {
+  from {
+    margin-left: 30%;
+    opacity: 0; }
+  to {
+    margin-left: 2%;
+    opacity: 1; }
+  50% {
+    opacity: 0.5; } }
 
 /* Alert and Error styles */
-
 .error {
-  color: #D11404;
-}
+  color: #D11404; }
 
 .ng-dirty.ng-invalid {
-  border-color: #D11404;
-}
+  border-color: #D11404; }
 
 .ng-dirty.ng-valid {
-  border-color: #21D153;
-}
+  border-color: #21D153; }
 
 .alert {
-  margin-top: 10px;
-}
+  margin-top: 10px; }
 
 .alert a {
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
 /* Container styles */
-
-.user-topbox, .user-stacks, .register, .login, .stack-top, .stack-bottom {
+.box, .user-topbox, .user-stacks, .register, .login, .stack-top, .stack-bottom {
   background-color: rgba(240, 240, 240, 0.8);
   text-align: center;
   border-radius: 6px;
-  box-shadow: 3px;
-}
+  box-shadow: 3px; }
 
 /* Form Styles */
-
 input {
   color: #475B62;
-  background: rgba(255,255,255,1);
+  background: white;
   border: 1px solid white;
   border-radius: 10px;
   outline: 0;
-  padding: 4px;
-}
+  padding: 4px; }
 
 /* Buttons */
-
-.btn:hover { 
-  background-color: #66CCFF;
-}
+.btn:hover {
+  background-color: #66CCFF; }
 
 /* Navbar */
-
 .navbar-nav {
-  font-size: 1.4rem;
-}
+  font-size: 1.4rem; }
 
 /*
  * Page styles
  */
-
 /* Welcome page */
-
 .jumbotron {
   margin: 0 auto;
   text-align: center;
-  background-color: rgba(240,240,240,0.8);
-}
+  background-color: rgba(240, 240, 240, 0.8); }
 
 .jumbotron span {
-  font-size: 1.4em;
-} 
+  font-size: 1.4em; }
 
 .jumbotron .btn-group {
   margin-top: 10px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .quote {
   margin: 0 auto;
   width: 300px;
   text-align: left;
-  color: #888888;
-}
+  color: #888888; }
 
 .welcome-form {
   margin: 0 auto;
-  width: 50%;
-}
+  width: 50%; }
 
 /* Room page */
-
 .room {
   max-width: 800px;
   margin: 0 auto;
   padding: 15px;
   background-color: #eee;
   border-radius: 6px;
-  box-shadow: 3px 3px 9px #000;
-}
+  box-shadow: 3px 3px 9px #000; }
 
 .chat-header {
   border-bottom: 1px solid #999999;
   padding-bottom: 10px;
-  padding-right: 10px;
-}
+  padding-right: 10px; }
 
 .chat-window {
   background-color: #ffffff;
@@ -134,22 +112,19 @@ input {
   max-height: 300px;
   overflow: auto;
   padding: 10px;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 .name-input {
   width: 30%;
-  margin-left: auto;
-}
+  margin-left: auto; }
 
-.message-body {
-  font-size: 1.4rem;
-  margin-left: 10px;
-}
-
-.message-user {
+.message .message-user {
   font-size: 1.2rem;
-  color: #aaaaaa;
-}
+  color: #aaaaaa; }
 
-
+.message .message-body {
+  font-size: 1.4rem;
+  margin-left: 2%;
+  animation-duration: 0.5s;
+  animation-name: slidein;
+  animation-timing-function: ease; }

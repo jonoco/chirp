@@ -2,8 +2,6 @@ var myApp = angular.module('myApp',
   ['ngRoute', 'firebase'])
 .constant('FIREBASE_URL', 'https://chirpapp.firebaseio.com/');
 
-//var appControllers = angular.module('appControllers', []);
-
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
   .when('/', {
